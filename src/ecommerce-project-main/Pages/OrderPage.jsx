@@ -6,29 +6,29 @@ const OrderPage = () => {
     <>
        <div class="header">
       <div class="left-section">
-        <a href="index.html" class="header-link">
+        <a href="/" class="header-link">
           <img class="logo"
-            src="images/logo-white.png" />
-          <img class="mobile-logo"
-            src="images/mobile-logo-white.png" />
+            src="images/logo.png" />
+           <img className="mobile-logo w-12 h-20 "
+            src="images/logo.png" />
         </a>
       </div>
 
       <div class="middle-section">
         <input class="search-bar" type="text" placeholder="Search" />
 
-        <button class="search-button">
+        <button class="search-button grid place-items-center">
           <img class="search-icon" src="images/icons/search-icon.png" />
         </button>
       </div>
 
       <div class="right-section">
-        <a class="orders-link header-link" href="orders.html">
+        <a class="orders-link header-link" href="/orders">
 
           <span class="orders-text">Orders</span>
         </a>
 
-        <a class="cart-link header-link" href="checkout.html">
+        <a class="cart-link header-link" href="/checkout">
           <img class="cart-icon" src="images/icons/cart-icon.png" />
           <div class="cart-quantity">3</div>
           <div class="cart-text">Cart</div>
@@ -82,7 +82,7 @@ const OrderPage = () => {
             </div>
 
             <div class="product-actions">
-              <a href="tracking.html">
+              <a href="/tracking">
                 <button class="track-package-button button-secondary">
                   Track package
                 </button>
@@ -110,7 +110,7 @@ const OrderPage = () => {
             </div>
 
             <div class="product-actions">
-              <a href="tracking.html">
+              <a href="/tracking">
                 <button class="track-package-button button-secondary">
                   Track package
                 </button>
@@ -161,7 +161,7 @@ const OrderPage = () => {
             </div>
 
             <div class="product-actions">
-              <a href="tracking.html">
+              <a href="/tracking">
                 <button class="track-package-button button-secondary">
                   Track package
                 </button>
