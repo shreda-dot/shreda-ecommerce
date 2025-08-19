@@ -5,20 +5,24 @@ import './HomePage.css'
 const HomePage = () => {
   return (
     <>
-      <div className="header">
+      <div className="header ">
       <div className="left-section">
         <a href="index.html" className="header-link">
           <img className="logo"
-            src="images/logo-white.png" />
-          <img className="mobile-logo"
-            src="images/mobile-logo-white.png" />
+            src="images/logo.png" />
+          <img className="mobile-logo w-12 h-20 "
+            src="images/logo.png" />
+            
         </a>
       </div>
 
       <div className="middle-section">
-        <input className="search-bar" type="text" placeholder="Search" />
+        <input className="search-bar" 
+        size='50'
+        type="text" 
+        placeholder="Search" />
 
-        <button className="search-button">
+        <button className="search-button grid place-items-center">
           <img className="search-icon" src="images/icons/search-icon.png" />
         </button>
       </div>
