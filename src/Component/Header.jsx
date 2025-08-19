@@ -2,7 +2,7 @@ import React from "react";
 import "../Component/HomeHeader.css";
 import { Link } from "react-router";
 
-const Header = () => {
+const Header = ({cartCount}) => {
   return (
     <>
       <div className="header ">
@@ -33,7 +33,7 @@ const Header = () => {
 
          <Link className="cart-link header-link" to="/checkout">
             <img className="cart-icon" src="images/icons/cart-icon.png" />
-            <div className="cart-quantity">3</div>
+            <div className="cart-quantity">{cartCount}</div>
             <div className="cart-text">Cart</div>
           </Link>
         </div>
