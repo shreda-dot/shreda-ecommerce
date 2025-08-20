@@ -8,9 +8,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  server:{
-    port: 3000,
-    strictPort: true,
-    open: true,
-  }
+  // server:{
+  //   port: 3000,
+  //   strictPort: true,
+  //   open: true,
+  // }
 })
