@@ -9,19 +9,18 @@ const Header = ({cartCount}) => {
         <div className="left-section">
          <Link to="/" className="header-link">
             <img className="logo" src="images/logo.png" />
-            <img className="mobile-logo w-12 h-20 " src="images/logo.png" />
+            <img className="mobile-logo" src="images/mobile-logo.png" />
           </Link>
         </div>
 
-        <div className="middle-section">
+        <div className="middle-section ">
           <input
-            className="search-bar"
-            size="50"
+            className="search-bar bg-white text-dark"
             type="text"
             placeholder="Search"
           />
 
-          <button className="search-button grid place-items-center">
+          <button className="search-button grid place-items-center sm-border-l-0">
             <img className="search-icon" src="images/icons/search-icon.png" />
           </button>
         </div>

@@ -1,13 +1,11 @@
 .header {
   background-color: rgb(8, 79, 45);
-  color: white;
-  padding-left: 15px;
+  /* color: white; */
+  padding-left: 10px;
   padding-right: 15px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -54,7 +52,7 @@
 
   .header .mobile-logo {
     display: block;
-    height: 26px;
+    height: 25px;
     margin-top: 1px;
   }
 }
@@ -84,8 +82,8 @@
   background-color: rgb(186, 255, 190);
   border: none;
   width: 45px;
-  height: 40px;
-  border-top-right-radius: 5px;
+  height: 38px;
+  /* border-top-right-radius: 5px; */
   border-bottom-right-radius: 5px;
   flex-shrink: 0;
 }
@@ -139,11 +137,9 @@
   color: rgb(8, 79, 45);
   font-size: 14px;
   font-weight: 700;
-
   position: absolute;
   top: 8.5px;
   right: 46px;
-
   width: 26px;
   text-align: center;
 }
