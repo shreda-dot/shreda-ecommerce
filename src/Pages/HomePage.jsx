@@ -7,6 +7,12 @@ import ProductCard from '../Component/ProductCard'; // Import the component
 
 
 const HomePage = ({onAddToCart}) => {
+  fetch('http://localhost:3000/api/products')
+  .then((response)=>{
+    return response.json()
+  }).then((data)=>{
+    console.log(data)
+   })
    return (
     <>
     <div className="p-4 bg-gray-100 min-h-screen">

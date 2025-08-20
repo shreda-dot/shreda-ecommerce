@@ -111,7 +111,7 @@ export const products = [
     priceCents: 5600
   },
   {
-    id: '83d47ca1-db5c-4470-b461-9ce1f445',
+    id: '83d47ca1-db5c-4470-b461-9ce1f44',
     image: '/images/products/laundry-detergent-tabs.jpg',
     name: 'Detergent Tab',
     rating: {
