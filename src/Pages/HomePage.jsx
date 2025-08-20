@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import './HomePage.css'
 import { products } from '../Product'; // Import the data
 import ProductCard from '../Component/ProductCard'; // Import the component
@@ -7,11 +8,9 @@ import ProductCard from '../Component/ProductCard'; // Import the component
 
 
 const HomePage = ({onAddToCart}) => {
-  fetch('http://localhost:3000/api/products')
+  axios.get('http://localhost:3000/api/products')
   .then((response)=>{
-    return response.json()
-  }).then((data)=>{
-    console.log(data)
+    console.log(response.data)
    })
    return (
     <>
