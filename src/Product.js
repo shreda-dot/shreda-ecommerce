@@ -4,7 +4,7 @@ export const products = [
     image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
     name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
     rating: {
-      star: 4.5,
+      stars: 4.5,
       count: 87
     },
     priceCents: 1090
@@ -14,7 +14,7 @@ export const products = [
     image: 'images/products/intermediate-composite-basketball.jpg',
     name: 'Intermediate Size Basketball',
     rating: {
-      star: 4.0,
+      stars: 4.0,
       count: 127
     },
     priceCents: 2095
@@ -24,7 +24,7 @@ export const products = [
     image: 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
     name: 'Adults Plain Cotton T-Shirt',
     rating: {
-      star: 4.5,
+      stars: 4.5,
       count: 56
     },
     priceCents: 600
@@ -34,7 +34,7 @@ export const products = [
     image: '/images/products/straw-sunhat.jpg',
     name: 'Sun hat',
     rating: {
-      star: 4.5,
+      stars: 4.5,
       count: 56
     },
     priceCents: 8000
@@ -44,7 +44,7 @@ export const products = [
     image: '/images/products/women-sandal-heels-white-pink.jpg',
     name: 'Sandle Hells - 2 Pack',
     rating: {
-      star: 4.5,
+      stars: 4.5,
       count: 56
     },
     priceCents: 9990
@@ -54,7 +54,7 @@ export const products = [
     image: '/images/products/women-summer-jean-shorts.jpg',
     name: 'Jean Short - 2 Pack',
     rating: {
-      star: 4.5,
+      stars: 4.5,
       count: 56
     },
     priceCents: 7000
@@ -64,7 +64,7 @@ export const products = [
     image: '/images/products/3-piece-cooking-set.jpg',
     name: 'Cooking Set - 3 Pack',
     rating: {
-      star: 4.5,
+      stars: 4.5,
       count: 56
     },
     priceCents: 4500
@@ -74,7 +74,7 @@ export const products = [
     image: '/images/products/bathroom-mat.jpg',
     name: 'Bathroom mat - 5 Pack',
     rating: {
-      star: 4.5,
+      stars: 4.5,
       count: 56
     },
     priceCents: 5000
@@ -85,7 +85,7 @@ export const products = [
     image: '/images/products/countertop-push-blender-black.jpg',
     name: 'Blender - 2 Pack',
     rating: {
-      star: 4.5,
+      stars: 4.5,
       count: 56
     },
     priceCents: 8000
@@ -95,7 +95,7 @@ export const products = [
     image: '/images/products/sky-leaf-branch-earrings.jpg',
     name: 'Earings',
     rating: {
-      star: 4,
+      stars: 4,
       count: 56
     },
     priceCents: 10000
@@ -105,7 +105,7 @@ export const products = [
     image: '/images/products/non-stick-cooking-set-4-pieces.jpg',
     name: 'Cooking Set',
     rating: {
-      star: 5,
+      stars: 5,
       count: 56
     },
     priceCents: 5600
@@ -115,7 +115,7 @@ export const products = [
     image: '/images/products/laundry-detergent-tabs.jpg',
     name: 'Detergent Tab',
     rating: {
-      star: 5,
+      stars: 5,
       count: 56
     },
     priceCents: 5600

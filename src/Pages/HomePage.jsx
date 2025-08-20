@@ -1,17 +1,22 @@
 import React from 'react'
 import axios from 'axios'
+import { useEffect } from 'react';
+import { useState } from 'react';
 import './HomePage.css'
-import { products } from '../Product'; // Import the data
 import ProductCard from '../Component/ProductCard'; // Import the component
 
 
 
 
 const HomePage = ({onAddToCart}) => {
-  axios.get('http://localhost:3000/api/products')
-  .then((response)=>{
-    console.log(response.data)
-   })
+  const [products, setProducts] = useState([])
+  useEffect(()=>{
+     axios.get('http://localhost:3000/api/products')
+    .then((response)=>{
+      setProducts(response.data)
+    })
+  },[])
+ 
    return (
     <>
     <div className="p-4 bg-gray-100 min-h-screen">

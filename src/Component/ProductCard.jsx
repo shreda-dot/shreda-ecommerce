@@ -17,7 +17,7 @@ const ProductCard = ({ product, onAddToCart }) => {
 
       <div className="flex items-center mb-2">
         <img className="h-4"
-          src={`images/ratings/rating-${product.rating.star * 10}.png`}
+          src={`images/ratings/rating-${product.rating.stars * 10}.png`}
           alt={`Rating: ${product.rating.stars} stars`} />
         <div className="text-sm text-blue-500 font-medium ml-1 cursor-pointer hover:underline">
           {product.rating.count}
