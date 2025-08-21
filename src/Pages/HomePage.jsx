@@ -13,11 +13,11 @@ const HomePage = () => {
   const [cart, SetCart] = useState([])
   const [products, setProducts] = useState([])
   // useEffect(()=>{
-  //    axios.get('http://localhost:3000/api/products')
+  //    axios.get('/api/products')
   //   .then((response)=>{
   //     setProducts(response.data)
   //   })
-  //   axios.get ('http://localhost:3000/api/cart-items')
+  //   axios.get ('/api/cart-items')
   //   .then ((response)=>{
   //     SetCart(response.data)
   //   })
@@ -25,7 +25,7 @@ const HomePage = () => {
   // },[])
   const onAddToCart = (productId, quantity) => {
     // Make a POST request to your backend's cart-items endpoint.
-    axios.post('http://localhost:3000/api/cart-items', {
+    axios.post('/api/cart-items', {
       productId, // The ID of the product
       quantity   // The quantity from the select tag
     })
@@ -42,7 +42,7 @@ const HomePage = () => {
 
   useEffect(() => {
     // Fetch products
-    axios.get('http://localhost:3000/api/products')
+    axios.get('/api/products')
       .then((response) => {
         setProducts(response.data);
       })
@@ -51,7 +51,7 @@ const HomePage = () => {
       });
 
     // Fetch cart items
-    axios.get('http://localhost:3000/api/cart-items')
+    axios.get('/api/cart-items')
       .then((response) => {
         SetCart(response.data);
       })
