@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FormatMoney } from '../utility/money';
 
 const ProductCard = ({ product, onAddToCart }) => {
   // State to store the selected quantity
@@ -25,7 +26,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       </div>
 
       <div className="text-md font-bold text-gray-700 mb-4">
-        ${(product.priceCents / 100).toFixed(2)}
+       {FormatMoney(product.priceCents)}
       </div>
 
       <select 

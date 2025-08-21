@@ -10,7 +10,7 @@ import axios from 'axios'
 const App = () => {
  const [cart, SetCart] = React.useState([])
 React.useEffect(()=>{
-   axios.get('/api/cart-items')
+   axios.get('/api/cart-items?expand=product')
       .then((response) => {
         SetCart(response.data);
       })
