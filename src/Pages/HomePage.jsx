@@ -9,8 +9,8 @@ import ProductCard from '../Component/ProductCard'; // Import the component
 
 
 
-const HomePage = () => {
-  const [cart, SetCart] = useState([])
+const HomePage = ({cart}) => {
+  
   const [products, setProducts] = useState([])
   // useEffect(()=>{
   //    axios.get('/api/products')
@@ -51,13 +51,7 @@ const HomePage = () => {
       });
 
     // Fetch cart items
-    axios.get('/api/cart-items')
-      .then((response) => {
-        SetCart(response.data);
-      })
-      .catch(error => {
-        console.error("Error fetching cart items:", error);
-      });
+   
   }, []); // The empty array ensures
  
    return (
