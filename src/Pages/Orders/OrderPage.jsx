@@ -9,9 +9,14 @@ import OrderHeaderRightSection from "./OrderHeaderRightSection";
 const OrderPage = ({ cart }) => {
   const [Orders, setOrders] = React.useState([]);
   React.useEffect(() => {
-    axios.get("/api/orders?expand=products").then((response) => {
+    const FetchOrderData = async (params) => {
+      const response = await axios.get("/api/orders?expand=products")
+    
       setOrders(response.data);
-    });
+  
+    }
+    FetchOrderData();
+    
   }, []);
 
   return (

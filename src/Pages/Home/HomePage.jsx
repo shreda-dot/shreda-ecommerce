@@ -37,19 +37,19 @@ const HomePage = ({ cart }) => {
       });
   };
 
-  useEffect(() => {
-    // Fetch products
-    axios
+  useEffect( () => {
+    const getHomeData = async () => {
+      const response = await axios
       .get("/api/products")
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-      });
+     setProducts(response.data);
+     
+    }
+    // Fetch products
+    
+      getHomeData()
 
     // Fetch cart items
-  }, []); // The empty array ensures
+}, []); // The empty array ensures
 
   return (
     <>

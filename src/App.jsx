@@ -9,14 +9,15 @@ import axios from "axios";
 const App = () => {
   const [cart, SetCart] = React.useState([]);
   React.useEffect(() => {
-    axios
+    const fetchAppData = async () => {
+     const response = await axios
       .get("/api/cart-items?expand=product")
-      .then((response) => {
+      
         SetCart(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching cart items:", error);
-      });
+    
+    }
+    
+      fetchAppData();
   }, []);
 
   return (
