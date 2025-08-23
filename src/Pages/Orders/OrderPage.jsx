@@ -1,0 +1,40 @@
+import React from "react";
+import axios from "axios";
+import "./Orders.css";
+import Header from "../../Component/Header";
+import OrderDetailsGrid from "./OrderDetailsGrid";
+import OrderLeftSection from "./OrderLeftSection";
+import OrderHeaderRightSection from "./OrderHeaderRightSection";
+
+const OrderPage = ({ cart }) => {
+  const [Orders, setOrders] = React.useState([]);
+  React.useEffect(() => {
+    axios.get("/api/orders?expand=products").then((response) => {
+      setOrders(response.data);
+    });
+  }, []);
+
+  return (
+    <>
+      <Header cart={cart} />
+      <div className="orders-page">
+        <div className="page-title">Your Orders</div>
+        <div className="orders-grid">
+          {Orders.map((order) => {
+            return (
+              <div key={order.id} className="order-container">
+                <div className="order-header">
+                 <OrderLeftSection order={order} />
+                 <OrderHeaderRightSection order={order} />
+                </div>
+               <OrderDetailsGrid order={order} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default OrderPage;
