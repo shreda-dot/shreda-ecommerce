@@ -7,7 +7,7 @@ import OrderSummary from "./OrderSummary"
 import {PaymentSummaryS} from './PaymentSummary'
 
 
-const CheckoutPages = ({ cart }) => {
+const CheckoutPages = ({ cart,LoadCart }) => {
   const [deliveryoptions, setDeliveryOptions] = React.useState([]);
   const [PaymentSummary, setPaymentSummary] = React.useState([null]);
 
@@ -29,7 +29,7 @@ const CheckoutPages = ({ cart }) => {
    }
     FetchDeliveryData();
    
-  }, []);
+  }, [cart]);
 
   return (
     <>
@@ -60,7 +60,7 @@ const CheckoutPages = ({ cart }) => {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-          <OrderSummary cart={cart} deliveryoptions={deliveryoptions} />
+          <OrderSummary cart={cart} deliveryoptions={deliveryoptions} LoadCart={LoadCart} />
           <PaymentSummaryS PaymentSummary={PaymentSummary} />
          
          

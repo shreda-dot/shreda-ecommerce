@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import DeliveryOptions from "./DeliveryOptions"
 import CartItemsDetails from "./CartItemsDetails";
 
-const OrderSummary = ({cart, deliveryoptions}) => {
+const OrderSummary = ({cart, deliveryoptions, LoadCart}) => {
   return (
     <>
       <div className="order-summary">
@@ -26,7 +26,7 @@ const OrderSummary = ({cart, deliveryoptions}) => {
                 <div className="cart-item-details-grid">
                   <img className="product-image" src={cartItem.product.image} />
                   <CartItemsDetails cartItem={cartItem} />
-                  <DeliveryOptions cartItem={cartItem} deliveryoptions={deliveryoptions}/>                
+                  <DeliveryOptions cartItem={cartItem} deliveryoptions={deliveryoptions} LoadCart={LoadCart}/>                
                 </div>
               </div>
             );
