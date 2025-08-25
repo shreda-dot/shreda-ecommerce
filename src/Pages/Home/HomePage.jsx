@@ -6,7 +6,7 @@ import Header from "../../Component/Header";
 import "./HomePage.css";
 import ProductCard from "../../Component/ProductCard"; // Import the component
 
-const HomePage = ({ cart }) => {
+const HomePage = ({ cart, LoadCart }) => {
   const [products, setProducts] = useState([]);
   // useEffect(()=>{
   //    axios.get('/api/products')
@@ -64,7 +64,8 @@ const HomePage = ({ cart }) => {
             <ProductCard
               key={product.id}
               product={product}
-              onAddToCart={onAddToCart}
+             LoadCart={LoadCart}
+              products= {products}
             />
           ))}
         </div>
