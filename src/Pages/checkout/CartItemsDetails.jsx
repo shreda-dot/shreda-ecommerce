@@ -41,22 +41,8 @@ const CartItemsDetails = ({ cartItem, DeleteCartData, UpdateCartData }) => {
           <span>
             Quantity:{" "}
             <span className="quantity-label">{cartItem.quantity}</span>
-          </span>
-          <span
-            onClick={() => setIsUpdating(true)}
-            className="link-primary update-quantity-link"
-          >
-            Update
-          </span>
-          <span
-            onClick={DeleteCartData}
-            className="delete-quantity-link link-primary"
-          >
-            Delete
-          </span>
-        </div>
-        {/* rendering the update button */}
-        {isUpdating && (
+
+            {isUpdating && (
           <div className="update-container ">
             <input
               type="number"
@@ -64,16 +50,35 @@ const CartItemsDetails = ({ cartItem, DeleteCartData, UpdateCartData }) => {
               onKeyDown={handleKeydown}
               onChange={(e) => setQuantity(Number(e.target.value))}
               min="1"
-              className="quantity-input mr-5 mt-5"
+              className="quantity-input"
             />
-            <span
+            </div>
+            )}
+            
+
+          </span>
+          
+        </div>
+        <span
+            onClick={() => setIsUpdating(true)}
+            
+            className="link-primary update-quantity-link mr-5"
+          >
+            Update
+          </span>
+          <span
+            onClick={DeleteCartData}
+            className="delete-quantity-link link-primary mr-5"
+          >
+            Delete
+          </span>
+          <span
               onClick={handleUpdateClick}
               className="link-primary save-link"
             >
               Save
             </span>
-          </div>
-        )}
+        
          {/* rendering the updating popup */}
             {UpdatePopUp && (
         <div className="fixed top-16 left-1/2 -translate-x-1/2 z-50 p-4 rounded-md shadow-lg bg-green-500 text-white transition-opacity duration-300 opacity-100 animate-fadeIn">

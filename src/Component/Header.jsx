@@ -1,8 +1,31 @@
 import React from "react";
 import "../Component/HomeHeader.css";
 import { Link } from "react-router";
+import { useNavigate } from "react-router";
 
 const Header = ({cart}) => {
+  
+  const [SearchBar, setSearchBar] = React.useState('')
+  const SearchButtonData = (()=>{
+   
+   
+    console.log(SearchBar)
+   
+      setSearchBar('') 
+      
+  })
+ 
+  const HandleClickButton = (event) =>{
+    if (event.key === "Enter") {
+     event.preventDefault(); 
+      SearchButtonData()
+    
+
+    }else if (event.key === 'Escape'){
+      setSearchBar('')
+    }
+  }
+  
   const totalQuantity = cart.reduce((total, cartItem) => {
     return total + cartItem.quantity;
   }, 0); // The '0' is the starting value for the total.
@@ -19,12 +42,17 @@ const Header = ({cart}) => {
 
         <div className="middle-section ">
           <input
+          onKeyDown={HandleClickButton}
+          value={SearchBar}
+           onChange={(e) => setSearchBar(e.target.value)}
             className="search-bar bg-white text-dark"
             type="text"
             placeholder="Search"
           />
 
-          <button className="search-button grid place-items-center sm-border-l-0">
+          <button 
+          onClick={SearchButtonData}
+          className="search-button grid place-items-center sm-border-l-0">
             <img className="search-icon" src="images/icons/search-icon.png" />
           </button>
         </div>

@@ -6,7 +6,7 @@ import OrderDetailsGrid from "./OrderDetailsGrid";
 import OrderLeftSection from "./OrderLeftSection";
 import OrderHeaderRightSection from "./OrderHeaderRightSection";
 
-const OrderPage = ({ cart }) => {
+const OrderPage = ({ cart, LoadCart }) => {
   const [Orders, setOrders] = React.useState([]);
   React.useEffect(() => {
     const FetchOrderData = async (params) => {
@@ -30,9 +30,9 @@ const OrderPage = ({ cart }) => {
               <div key={order.id} className="order-container">
                 <div className="order-header">
                  <OrderLeftSection order={order} />
-                 <OrderHeaderRightSection order={order} />
+                 <OrderHeaderRightSection order={order} cart={cart} />
                 </div>
-               <OrderDetailsGrid order={order} />
+               <OrderDetailsGrid order={order} cart={cart} LoadCart={LoadCart} />
               </div>
             );
           })}
