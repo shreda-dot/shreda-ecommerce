@@ -19,24 +19,7 @@ const HomePage = ({ cart, LoadCart }) => {
   //   })
 
   // },[])
-  const onAddToCart = (productId, quantity) => {
-    // Make a POST request to your backend's cart-items endpoint.
-    axios
-      .post("/api/cart-items", {
-        productId, // The ID of the product
-        quantity, // The quantity from the select tag
-      })
-      .then((response) => {
-        // If the backend call is successful, update the local cart state
-        // with the new data from the response.
-        SetCart(response.data);
-        console.log("Item added to cart:", response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error adding the item to the cart!", error);
-      });
-  };
-
+  
   useEffect( () => {
     const getHomeData = async () => {
       const response = await axios

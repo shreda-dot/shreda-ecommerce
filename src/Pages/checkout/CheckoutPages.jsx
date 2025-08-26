@@ -7,7 +7,7 @@ import OrderSummary from "./OrderSummary"
 import {PaymentSummaryS} from './PaymentSummary'
 
 
-const CheckoutPages = ({ cart,LoadCart }) => {
+const CheckoutPages = ({ cart, LoadCart }) => {
   const [deliveryoptions, setDeliveryOptions] = React.useState([]);
   const [PaymentSummary, setPaymentSummary] = React.useState([null]);
 
