@@ -45,7 +45,9 @@ const CheckoutPages = ({ cart, LoadCart }) => {
           <div className="checkout-header-middle-section">
             Checkout (
             <Link className="return-to-home-link" to="/">
-              3 itLms
+            WELCOME
+        
+            
             </Link>
             )
           </div>
@@ -61,7 +63,7 @@ const CheckoutPages = ({ cart, LoadCart }) => {
 
         <div className="checkout-grid">
           <OrderSummary cart={cart} deliveryoptions={deliveryoptions} LoadCart={LoadCart} />
-          <PaymentSummaryS PaymentSummary={PaymentSummary} />
+          <PaymentSummaryS PaymentSummary={PaymentSummary} LoadCart={LoadCart} />
          
          
         </div>
