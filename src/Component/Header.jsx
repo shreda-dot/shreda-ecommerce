@@ -1,20 +1,29 @@
 import React from "react";
 import "../Component/HomeHeader.css";
 import { Link } from "react-router";
-import { useNavigate } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 
 const Header = ({cart}) => {
+  const navigate = useNavigate()
+  const [SearchParms] = useSearchParams()
+  const searchText = SearchParms.get('searchBar')
   
-  const [SearchBar, setSearchBar] = React.useState('')
+  const [SearchBar, setSearchBar] = React.useState(searchText || '')
+
+
+  // SEARCHBUTTON FUNCTION
   const SearchButtonData = (()=>{
+
    
    
-    console.log(SearchBar)
+    
+     navigate(`/?search=${SearchBar}`);
    
       setSearchBar('') 
       
   })
- 
+
+//  the key button function
   const HandleClickButton = (event) =>{
     if (event.key === "Enter") {
      event.preventDefault(); 
@@ -25,7 +34,7 @@ const Header = ({cart}) => {
       setSearchBar('')
     }
   }
-  
+
   const totalQuantity = cart.reduce((total, cartItem) => {
     return total + cartItem.quantity;
   }, 0); // The '0' is the starting value for the total.

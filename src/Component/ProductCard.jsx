@@ -2,27 +2,32 @@ import React, { useState } from 'react';
 import { FormatMoney } from '../utility/money';
 import axios from 'axios';
 const ProductCard = ({ product, LoadCart }) => {
-  const [quantity, setQuatity] = React.useState(1)
+  const [quantity, setQuatity] = React.useState('')
   const [showPopUp, setShowPopUp] = React.useState(false)
 
 // THE FUNCTION THAT CONTROL THE INPUT TEXT
   const handleTextChange = (event) => {
     const quantitySelected = Number(event.target.value)
         setQuatity(quantitySelected)
-      
+       
     };
+    
     // THE FUNCTION THAT CONTROLS THE BUTTON ADD TO CART
     const AddToCart = async ()=>{
             await axios.post('/api/cart-items',{
             productId: product.id,
             quantity
+
+          
           })
+          setQuatity('')
           setShowPopUp(true)
           setTimeout(()=>{
             setShowPopUp(false)
-          }, 3000); //the pop-up will disappear after 3 seconds
+          }, 1000); //the pop-up will disappear after 3 seconds
 
          await LoadCart()
+         setQuatity ('')
         
         }
 
@@ -41,7 +46,9 @@ const ProductCard = ({ product, LoadCart }) => {
             <p className="font-semibold">{product.name} has been added</p>
           </div>
         </div>
+       
       )}
+     
       <div className="flex justify-center items-center h-48 mb-4">
         <img className="max-h-full max-w-full object-contain"
           src={product.image}
@@ -76,7 +83,8 @@ const ProductCard = ({ product, LoadCart }) => {
        
       >
         {[...Array(10).keys()].map(i => (
-          <option key={i + 1} value={i + 1}>{i + 1}</option>
+          <option key={i + 1} value={i + 0}>{i - 0}</option>
+         
         ))}
       </select>
       
@@ -86,6 +94,7 @@ const ProductCard = ({ product, LoadCart }) => {
         onClick={AddToCart}>
         Add to Cart
       </button>
+     
     </div>
 </>
 

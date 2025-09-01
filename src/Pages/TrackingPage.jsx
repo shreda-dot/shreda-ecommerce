@@ -4,9 +4,10 @@ import { Link } from 'react-router'
 import Header from '../Component/Header'
 
 const TrackingPage = () => {
+  
   return (
     <>
-     <Header />
+     {/* <Header cart={cart} /> */}
 
     <div class="tracking-page">
       <div class="order-tracking">

@@ -7,6 +7,7 @@ import TrackingPage from "./Pages/TrackingPage.jsx";
 import axios from "axios";
 
 const App = () => {
+  window.axios = axios;
   const [cart, SetCart] = React.useState([]);
 
    const LoadCart = async () => {
@@ -28,7 +29,7 @@ const App = () => {
         <Route index element={<HomePage cart={cart} LoadCart={LoadCart} />} />
         <Route path="checkout" element={<CheckoutPages cart={cart} LoadCart={LoadCart}/>} />
         <Route path="orders" element={<OrderPage cart={cart} LoadCart={LoadCart} />} />
-        <Route path="trackings" element={<TrackingPage />} />
+        <Route path="trackings" element={<TrackingPage/>} />
       </Routes>
     </>
   );

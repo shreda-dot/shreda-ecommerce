@@ -8,6 +8,8 @@ import axios from 'axios';
 
 const OrderDetailsGrid = ({order, LoadCart}) => {
 const navigate = useNavigate()
+
+
   return (
     <>
        <div className="order-details-grid">
@@ -21,6 +23,7 @@ const navigate = useNavigate()
                       navigate('/checkout') 
                       await LoadCart();
                     }
+               
                    
 
                     return (
@@ -57,7 +60,7 @@ const navigate = useNavigate()
 
                         <div className="product-actions">
                           <Link to="/trackings ">
-                            <button className="track-package-button button-secondary">
+                            <button onClick={TrackingData} className="track-package-button button-secondary">
                               Track package
                             </button>
                           </Link>
