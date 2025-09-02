@@ -60,7 +60,7 @@ const navigate = useNavigate()
 
                         <div className="product-actions">
                           <Link to="/trackings ">
-                            <button onClick={TrackingData} className="track-package-button button-secondary">
+                            <button  className="track-package-button button-secondary">
                               Track package
                             </button>
                           </Link>
