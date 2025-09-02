@@ -51,6 +51,7 @@ const ProductCard = ({ product, LoadCart }) => {
      
       <div className="flex justify-center items-center h-48 mb-4">
         <img className="max-h-full max-w-full object-contain"
+        data-testid ='product-image'
           src={product.image}
           alt={product.name} />
       </div>
@@ -61,9 +62,11 @@ const ProductCard = ({ product, LoadCart }) => {
 
       <div className="flex items-center mb-2">
         <img className="h-4"
+        data-testid ='product-rating-stars-image'
           src={`images/ratings/rating-${product.rating.stars * 10}.png`}
           alt={`Rating: ${product.rating.stars} stars`} />
         <div className="text-sm text-blue-500 font-medium ml-1 cursor-pointer hover:underline">
+          
           {product.rating.count}
         </div>
       </div>
