@@ -1,7 +1,9 @@
 import {it, expect, describe, vi} from 'vitest'
 import { render, screen } from '@testing-library/react';
 import ProductCard from './ProductCard';
-
+import userEvent from '@testing-library/user-event';
+import axios from 'axios';
+vi.mock('axios')
 
 describe('product component', () =>{
     it ('displays the product details correctly', () =>{
@@ -35,5 +37,33 @@ describe('product component', () =>{
         screen.getByText('87')
        ).toBeInTheDocument()
     });
+
+    // USER INTERACTION
+    it ('adds a product to the cart',async ()=> {
+          const product =  {
+    id: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+    image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
+    name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
+    rating: {
+      stars: 4.5,
+      count: 87
+    },
+    priceCents: 1090
+  }
+  const LoadCart =vi.fn()
+       render(<ProductCard product = {product} LoadCart={LoadCart}/>);
+       const user = userEvent.setup();
+      const addtocartbutton = screen.getByTestId('add-to-cart-id')
+      await user.click(addtocartbutton);
+
+      expect(axios.post).toHaveBeenCalledWith(
+        '/api/cart-items',
+        {
+            productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+            quantity: 1
+        }
+      )
+      expect(LoadCart).toHaveBeenCalled()
+    })
 
 });

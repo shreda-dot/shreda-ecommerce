@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FormatMoney } from '../utility/money';
 import axios from 'axios';
 const ProductCard = ({ product, LoadCart }) => {
-  const [quantity, setQuatity] = React.useState('')
+  const [quantity, setQuatity] = React.useState(1)
   const [showPopUp, setShowPopUp] = React.useState(false)
 
 // THE FUNCTION THAT CONTROL THE INPUT TEXT
@@ -93,6 +93,7 @@ const ProductCard = ({ product, LoadCart }) => {
       
       {/* The onClick handler sends both the product ID and the selected quantity */}
       <button 
+      data-testid = 'add-to-cart-id'
         className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors"
         onClick={AddToCart}>
         Add to Cart
