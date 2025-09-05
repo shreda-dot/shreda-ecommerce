@@ -49,7 +49,9 @@ const ProductCard = ({ product, LoadCart }) => {
        
       )}
      
-      <div className="flex justify-center items-center h-48 mb-4">
+      <div 
+      data-testid = 'PRODUCT-CONTAINER'
+      className="flex justify-center items-center h-48 mb-4">
         <img className="max-h-full max-w-full object-contain"
         data-testid ='product-image'
           src={product.image}
@@ -86,7 +88,7 @@ const ProductCard = ({ product, LoadCart }) => {
        
       >
         {[...Array(10).keys()].map(i => (
-          <option key={i + 1} value={i + 0}>{i - 0}</option>
+          <option key={i + 1} value={i + 1}>{i + 1}</option>
          
         ))}
       </select>
