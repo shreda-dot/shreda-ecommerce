@@ -2,7 +2,7 @@
   "name": "shreda-ecommerce",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://shreda-dot.github.io/E-commerce/",
+  "homepage": "https://shreda-dot.github.io/shreda-ecommerce",
   "type": "module",
   "scripts": {
     "dev": "vite",
