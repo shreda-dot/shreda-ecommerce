@@ -8,11 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  // server:{
-  //   port: 3000,
-  //   strictPort: true,
-  //   open: true,
-  // }
+    
   server:{
     proxy:{
       '/api':{
@@ -23,5 +19,6 @@ export default defineConfig({
       }
     }
 
-  }
+  },
+  base: './'
 })
