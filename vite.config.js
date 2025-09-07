@@ -20,5 +20,4 @@ export default defineConfig({
     }
 
   },
-  base: '/https://shreda-dot.github.io/shreda-ecommerce/'
 })
